@@ -19,7 +19,7 @@ export default {
 data() {
   return {
     urlAPI:'https://api.themoviedb.org/3',
-    apiKEY: 'e601b9a31a23f60982ea7c2f7e96a2b7 ',
+    apiKEY: 'e601b9a31a23f60982ea7c2f7e96a2b7',
     language:'it-IT',
     moviesList: []
   }
