@@ -1,13 +1,18 @@
 <template>
   <div>
-    <input placeholder="Cerca" type="text">
-    <button>Cerca</button>
+    <input v-model="textSearched " placeholder="Cerca" type="text">
+    <button @click="$emit('search', textSearched )">Cerca</button>
   </div>
 </template>
 
 <script>
 export default {
-name: 'MyHeader'
+  name: 'MyHeader',
+  data () {
+    return {
+      textSearched: ''
+    }
+  }
 }
 </script>
 
