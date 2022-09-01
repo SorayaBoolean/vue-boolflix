@@ -11,6 +11,9 @@
         :src="require('@/assets/img/' + movie.original_language +'.png')"/>
         <span v-else>{{movie.original_language}}</span>
         {{movie.vote_average}}
+        <div>
+          <i v-for="n in 5" class="fa-star" :class="(n>=changeVote(movie.vote_average))?'fa-regular':'fa-solid'" :key="n"></i>
+        </div>
       </li>
     </ul>
     </section>
