@@ -42,6 +42,11 @@ data(){
   return {
     usedFlags: ['en','it', 'fr']
   }
+},
+methods: {
+  changeVote (vote) {
+    return Math.ceil(vote / 2)
+  }
 }
 }
 </script>
