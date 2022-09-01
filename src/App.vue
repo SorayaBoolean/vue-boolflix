@@ -26,7 +26,7 @@ data() {
 },
 methods: {
   searching (searchedText) {
-    axios.get(this.urlAPI + '/search/movie?api=key=' + this.apiKEY + '&language=' + this.language + '&query=' + searchedText)
+    axios.get(this.urlAPI + '/search/movie?api_key=' + this.apiKEY + '&language=' + this.language + '&query=' + searchedText)
     .then( response => {
       this.moviesList = response.data.results;
     })

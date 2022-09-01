@@ -2,7 +2,7 @@
   <div>
     <ul>
       
-      <li v-for="(movie, index) in movieList" :key="index">
+      <li v-for="(movie, index) in moviesList" :key="index">
         {{movie.title}}
         {{movie.original_title}}
         {{movie.original_language}}
