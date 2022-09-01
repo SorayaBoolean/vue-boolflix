@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MyHeader @search="searching"/>
-    <MyMain :moviesList="moviesList"/>
+    <MyMain :moviesList="moviesList" :tvShowsList="tvShowsList"/>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ data() {
     urlAPI:'https://api.themoviedb.org/3',
     apiKEY: 'e601b9a31a23f60982ea7c2f7e96a2b7',
     language:'it-IT',
-    moviesList: []
+    moviesList: [],
+    tvShowsList: []
   }
 },
 methods: {
@@ -29,6 +30,13 @@ methods: {
     axios.get(this.urlAPI + '/search/movie?api_key=' + this.apiKEY + '&language=' + this.language + '&query=' + searchedText)
     .then( response => {
       this.moviesList = response.data.results;
+    })
+    .catch(err => {
+      console.log(err)
+    });
+    axios.get(this.urlAPI + '/search/tv?api_key=' + this.apiKEY + '&language=' + this.language + '&query=' + searchedText)
+    .then( response => {
+      this.tvShowsList = response.data.results;
     })
     .catch(err => {
       console.log(err)
