@@ -34,6 +34,7 @@ methods: {
     .catch(err => {
       console.log(err)
     });
+    
     axios.get(this.urlAPI + '/search/tv?api_key=' + this.apiKEY + '&language=' + this.language + '&query=' + searchedText)
     .then( response => {
       this.tvShowsList = response.data.results;
